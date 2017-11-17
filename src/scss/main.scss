@@ -1,0 +1,11 @@
+@import "bootstrap/bootstrap";
+
+.main-header, .main-body {
+	@include make-container();
+	@include make-container-max-widths();
+}
+
+.main-header {
+	margin-top: 4em;
+	margin-bottom: 2em;
+}

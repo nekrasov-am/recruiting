@@ -1,11 +1,13 @@
 <?php
 
-// Fetch DI Container
-$container = $app->getContainer();
-
 // Register Smarty View helper
 $container['view'] = function ($c) {
-	$view = new \Slim\Views\Smarty(__DIR__ . '/../templates');
+	$view = new \Slim\Views\Smarty(__DIR__ . '/../templates',
+		[
+			'cacheDir' => __DIR__ . '/../../cache',
+			'compileDir' => __DIR__ . '/../../cache/compiled'
+		]
+	);
 
 	// Add Slim specific plugins
 	$smartyPlugins = new \Slim\Views\SmartyPlugins($c['router'], $c['request']->getUri());
