@@ -12,7 +12,6 @@ $container = $app->getContainer();
 
 // Database
 require __DIR__ . '/../src/app/db.php';
-require __DIR__ . '/../src/models/testRecord.php';
 
 // Routes
 require __DIR__ . '/../src/app/routes.php';

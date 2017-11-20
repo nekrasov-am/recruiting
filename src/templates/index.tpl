@@ -11,6 +11,9 @@
         <script src="js/lib/jquery-3.2.1.js"></script>
         <script src="js/lib/bootstrap.bundle.js"></script>
         <script src="js/lib/datatables.js"></script>
+        {foreach from=$js item=$js_path}
+        <script src="{$js_path}"></script>
+        {/foreach}
     {/block}
 </head>
 <body>
@@ -20,16 +23,16 @@
     </header>
 
     <main class="main-body">
-        <table id="test-record-table" class="display" cellspacing="0" width="100%">
+        <table id="testRecordTable" class="display" cellspacing="0" width="100%">
             <thead>
             <tr>
                 <th>#</th>
-                <th></th>
+                <th>SKU</th>
+                <th>Description</th>
+                <th>Notes</th>
             </tr>
             </thead>
-            <tbody>
-
-            </tbody>
+            <tbody></tbody>
         </table>
     </main>
 

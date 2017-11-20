@@ -1,12 +1,9 @@
 <?php
 
 // Service factory for the ORM
-$container['db'] = function ($container) {
-	$capsule = new \Illuminate\Database\Capsule\Manager;
-	$capsule->addConnection($container['settings']['db']);
+$capsule = new Illuminate\Database\Capsule\Manager;
+$capsule->addConnection($container->get('settings')['db']);
+$capsule->bootEloquent();
 
-	$capsule->setAsGlobal();
-	$capsule->bootEloquent();
-
-	return $capsule;
-};
+// Models
+require __DIR__ . '/../models/TestRecord.php';
